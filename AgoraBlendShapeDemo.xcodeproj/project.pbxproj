@@ -1,0 +1,491 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FD50847294A2E900029E63B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD50846294A2E900029E63B /* AppDelegate.swift */; };
+		0FD50849294A2E900029E63B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD50848294A2E900029E63B /* SceneDelegate.swift */; };
+		0FD5084B294A2E900029E63B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD5084A294A2E900029E63B /* ViewController.swift */; };
+		0FD5084E294A2E900029E63B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD5084C294A2E900029E63B /* Main.storyboard */; };
+		0FD50850294A2E920029E63B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD5084F294A2E920029E63B /* Assets.xcassets */; };
+		0FD50853294A2E920029E63B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD50851294A2E920029E63B /* LaunchScreen.storyboard */; };
+		0FD5085B294A2EFF0029E63B /* BlendShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD5085A294A2EFF0029E63B /* BlendShapeViewController.swift */; };
+		F3CF995A29688137004C4052 /* AgoraRtmKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF995929688137004C4052 /* AgoraRtmKit */; };
+		F3CF995E29688222004C4052 /* AINS in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF995D29688222004C4052 /* AINS */; };
+		F3CF996029688222004C4052 /* AudioBeauty in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF995F29688222004C4052 /* AudioBeauty */; };
+		F3CF996229688222004C4052 /* ClearVision in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF996129688222004C4052 /* ClearVision */; };
+		F3CF996429688222004C4052 /* ContentInspect in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF996329688222004C4052 /* ContentInspect */; };
+		F3CF996629688222004C4052 /* PVC in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF996529688222004C4052 /* PVC */; };
+		F3CF996829688222004C4052 /* ReplayKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF996729688222004C4052 /* ReplayKit */; };
+		F3CF996A29688222004C4052 /* RtcBasic in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF996929688222004C4052 /* RtcBasic */; };
+		F3CF996C29688222004C4052 /* SpatialAudio in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF996B29688222004C4052 /* SpatialAudio */; };
+		F3CF996E29688222004C4052 /* SuperResolution in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF996D29688222004C4052 /* SuperResolution */; };
+		F3CF997029688222004C4052 /* VirtualBackground in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF996F29688222004C4052 /* VirtualBackground */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0FD50843294A2E900029E63B /* AgoraBlendShapeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AgoraBlendShapeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FD50846294A2E900029E63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0FD50848294A2E900029E63B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0FD5084A294A2E900029E63B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0FD5084D294A2E900029E63B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0FD5084F294A2E920029E63B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0FD50852294A2E920029E63B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0FD50854294A2E920029E63B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FD5085A294A2EFF0029E63B /* BlendShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendShapeViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FD50840294A2E900029E63B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3CF996E29688222004C4052 /* SuperResolution in Frameworks */,
+				F3CF996629688222004C4052 /* PVC in Frameworks */,
+				F3CF996029688222004C4052 /* AudioBeauty in Frameworks */,
+				F3CF996829688222004C4052 /* ReplayKit in Frameworks */,
+				F3CF996C29688222004C4052 /* SpatialAudio in Frameworks */,
+				F3CF996A29688222004C4052 /* RtcBasic in Frameworks */,
+				F3CF996429688222004C4052 /* ContentInspect in Frameworks */,
+				F3CF995A29688137004C4052 /* AgoraRtmKit in Frameworks */,
+				F3CF996229688222004C4052 /* ClearVision in Frameworks */,
+				F3CF997029688222004C4052 /* VirtualBackground in Frameworks */,
+				F3CF995E29688222004C4052 /* AINS in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FD5083A294A2E900029E63B = {
+			isa = PBXGroup;
+			children = (
+				0FD50845294A2E900029E63B /* AgoraBlendShapeDemo */,
+				0FD50844294A2E900029E63B /* Products */,
+				8E6E7A56DBF032E10E9BC45D /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		0FD50844294A2E900029E63B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FD50843294A2E900029E63B /* AgoraBlendShapeDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FD50845294A2E900029E63B /* AgoraBlendShapeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				0FD50846294A2E900029E63B /* AppDelegate.swift */,
+				0FD50848294A2E900029E63B /* SceneDelegate.swift */,
+				0FD5084A294A2E900029E63B /* ViewController.swift */,
+				0FD5085A294A2EFF0029E63B /* BlendShapeViewController.swift */,
+				0FD5084C294A2E900029E63B /* Main.storyboard */,
+				0FD5084F294A2E920029E63B /* Assets.xcassets */,
+				0FD50851294A2E920029E63B /* LaunchScreen.storyboard */,
+				0FD50854294A2E920029E63B /* Info.plist */,
+			);
+			path = AgoraBlendShapeDemo;
+			sourceTree = "<group>";
+		};
+		8E6E7A56DBF032E10E9BC45D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0FD50842294A2E900029E63B /* AgoraBlendShapeDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FD50857294A2E920029E63B /* Build configuration list for PBXNativeTarget "AgoraBlendShapeDemo" */;
+			buildPhases = (
+				0FD5083F294A2E900029E63B /* Sources */,
+				0FD50840294A2E900029E63B /* Frameworks */,
+				0FD50841294A2E900029E63B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AgoraBlendShapeDemo;
+			packageProductDependencies = (
+				F3CF995929688137004C4052 /* AgoraRtmKit */,
+				F3CF995D29688222004C4052 /* AINS */,
+				F3CF995F29688222004C4052 /* AudioBeauty */,
+				F3CF996129688222004C4052 /* ClearVision */,
+				F3CF996329688222004C4052 /* ContentInspect */,
+				F3CF996529688222004C4052 /* PVC */,
+				F3CF996729688222004C4052 /* ReplayKit */,
+				F3CF996929688222004C4052 /* RtcBasic */,
+				F3CF996B29688222004C4052 /* SpatialAudio */,
+				F3CF996D29688222004C4052 /* SuperResolution */,
+				F3CF996F29688222004C4052 /* VirtualBackground */,
+			);
+			productName = AgoraBlendShapeDemo;
+			productReference = 0FD50843294A2E900029E63B /* AgoraBlendShapeDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FD5083B294A2E900029E63B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					0FD50842294A2E900029E63B = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 0FD5083E294A2E900029E63B /* Build configuration list for PBXProject "AgoraBlendShapeDemo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0FD5083A294A2E900029E63B;
+			packageReferences = (
+				F3CF995829688137004C4052 /* XCRemoteSwiftPackageReference "AgoraRTM_iOS" */,
+				F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+			);
+			productRefGroup = 0FD50844294A2E900029E63B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FD50842294A2E900029E63B /* AgoraBlendShapeDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0FD50841294A2E900029E63B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FD50853294A2E920029E63B /* LaunchScreen.storyboard in Resources */,
+				0FD50850294A2E920029E63B /* Assets.xcassets in Resources */,
+				0FD5084E294A2E900029E63B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FD5083F294A2E900029E63B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FD5084B294A2E900029E63B /* ViewController.swift in Sources */,
+				0FD50847294A2E900029E63B /* AppDelegate.swift in Sources */,
+				0FD5085B294A2EFF0029E63B /* BlendShapeViewController.swift in Sources */,
+				0FD50849294A2E900029E63B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0FD5084C294A2E900029E63B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FD5084D294A2E900029E63B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		0FD50851294A2E920029E63B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FD50852294A2E920029E63B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0FD50855294A2E920029E63B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0FD50856294A2E920029E63B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0FD50858294A2E920029E63B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AZ59WCD7SF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AgoraBlendShapeDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agora.AgoraBlendShapeDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0FD50859294A2E920029E63B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AZ59WCD7SF;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = AgoraBlendShapeDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.agora.AgoraBlendShapeDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FD5083E294A2E900029E63B /* Build configuration list for PBXProject "AgoraBlendShapeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FD50855294A2E920029E63B /* Debug */,
+				0FD50856294A2E920029E63B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FD50857294A2E920029E63B /* Build configuration list for PBXNativeTarget "AgoraBlendShapeDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FD50858294A2E920029E63B /* Debug */,
+				0FD50859294A2E920029E63B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F3CF995829688137004C4052 /* XCRemoteSwiftPackageReference "AgoraRTM_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraRTM_iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AgoraIO/AgoraRtcEngine_iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 4.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F3CF995929688137004C4052 /* AgoraRtmKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995829688137004C4052 /* XCRemoteSwiftPackageReference "AgoraRTM_iOS" */;
+			productName = AgoraRtmKit;
+		};
+		F3CF995D29688222004C4052 /* AINS */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = AINS;
+		};
+		F3CF995F29688222004C4052 /* AudioBeauty */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = AudioBeauty;
+		};
+		F3CF996129688222004C4052 /* ClearVision */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = ClearVision;
+		};
+		F3CF996329688222004C4052 /* ContentInspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = ContentInspect;
+		};
+		F3CF996529688222004C4052 /* PVC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = PVC;
+		};
+		F3CF996729688222004C4052 /* ReplayKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = ReplayKit;
+		};
+		F3CF996929688222004C4052 /* RtcBasic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = RtcBasic;
+		};
+		F3CF996B29688222004C4052 /* SpatialAudio */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = SpatialAudio;
+		};
+		F3CF996D29688222004C4052 /* SuperResolution */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = SuperResolution;
+		};
+		F3CF996F29688222004C4052 /* VirtualBackground */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F3CF995C29688222004C4052 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
+			productName = VirtualBackground;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0FD5083B294A2E900029E63B /* Project object */;
+}
