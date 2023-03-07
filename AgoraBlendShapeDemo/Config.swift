@@ -7,4 +7,4 @@
 
 import Foundation
 
-let appId = "<Your App ID>"
+let appId = "09f52d9dcc1f406b93d97ff1f43c554f"
