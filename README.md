@@ -2,4 +2,4 @@
 
 To run do the following
 
-1. edit `Config.swift` to have your agora app id, this file's history has been removed from the gitrepository and changes will be ignored.
+1. Create a swift file and add `let appId = "your app id"` anywhere you like.
