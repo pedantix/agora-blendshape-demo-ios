@@ -14,7 +14,7 @@
 		0FD50850294A2E920029E63B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FD5084F294A2E920029E63B /* Assets.xcassets */; };
 		0FD50853294A2E920029E63B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD50851294A2E920029E63B /* LaunchScreen.storyboard */; };
 		0FD5085B294A2EFF0029E63B /* BlendShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD5085A294A2EFF0029E63B /* BlendShapeViewController.swift */; };
-		288DB33E29B7A68100F31262 /* BlendShapeViewControlle+FileSaving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DB33D29B7A68100F31262 /* BlendShapeViewControlle+FileSaving.swift */; };
+		288DB33E29B7A68100F31262 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DB33D29B7A68100F31262 /* Config.swift */; };
 		F3CF995A29688137004C4052 /* AgoraRtmKit in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF995929688137004C4052 /* AgoraRtmKit */; };
 		F3CF995E29688222004C4052 /* AINS in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF995D29688222004C4052 /* AINS */; };
 		F3CF996029688222004C4052 /* AudioBeauty in Frameworks */ = {isa = PBXBuildFile; productRef = F3CF995F29688222004C4052 /* AudioBeauty */; };
@@ -38,7 +38,7 @@
 		0FD50852294A2E920029E63B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0FD50854294A2E920029E63B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FD5085A294A2EFF0029E63B /* BlendShapeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlendShapeViewController.swift; sourceTree = "<group>"; };
-		288DB33D29B7A68100F31262 /* BlendShapeViewControlle+FileSaving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlendShapeViewControlle+FileSaving.swift"; sourceTree = "<group>"; };
+		288DB33D29B7A68100F31262 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +91,7 @@
 				0FD5084F294A2E920029E63B /* Assets.xcassets */,
 				0FD50851294A2E920029E63B /* LaunchScreen.storyboard */,
 				0FD50854294A2E920029E63B /* Info.plist */,
-				288DB33D29B7A68100F31262 /* BlendShapeViewControlle+FileSaving.swift */,
+				288DB33D29B7A68100F31262 /* Config.swift */,
 			);
 			path = AgoraBlendShapeDemo;
 			sourceTree = "<group>";
@@ -193,7 +193,7 @@
 			files = (
 				0FD5084B294A2E900029E63B /* ViewController.swift in Sources */,
 				0FD50847294A2E900029E63B /* AppDelegate.swift in Sources */,
-				288DB33E29B7A68100F31262 /* BlendShapeViewControlle+FileSaving.swift in Sources */,
+				288DB33E29B7A68100F31262 /* Config.swift in Sources */,
 				0FD5085B294A2EFF0029E63B /* BlendShapeViewController.swift in Sources */,
 				0FD50849294A2E900029E63B /* SceneDelegate.swift in Sources */,
 			);
