@@ -22,6 +22,7 @@ class BlendShapeViewController: UIViewController {
     var currentImage: CGImage?
     var rawImage: CIImage?
     var size: CGSize?
+  
     let enableDetectBodyPoints = true
     let useNewCalculationMethod = true
     let messageTimeInterval: Double = 0.33
@@ -72,6 +73,7 @@ class BlendShapeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.clearDiskCache();
         self.size = self.sceneView.bounds.size
         self.startMessageTimer()
         self.startFileSaveTimer()
@@ -505,6 +507,17 @@ extension BlendShapeViewController {
 // MARK: - Save files in specified format for CSV and images to Files domain
 extension BlendShapeViewController {
     
+    
+    private func clearDiskCache() {
+           let fileManager = FileManager.default
+           let myDocuments = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+           let diskCacheStorageBaseUrl = myDocuments.appendingPathComponent("")
+           guard let filePaths = try? fileManager.contentsOfDirectory(at: diskCacheStorageBaseUrl, includingPropertiesForKeys: nil, options: []) else { return }
+           for filePath in filePaths {
+               try? fileManager.removeItem(at: filePath)
+           }
+       }
+    
     @objc private func saveFile() {
         guard let rawImage = rawImage else { return print("\(#function) failed no current image") }
         guard blendshapesLocation.count > 10 else { return print("\(#function) failed blend shape lcations is too short")}
@@ -530,7 +543,7 @@ extension BlendShapeViewController {
         let resizeFilter = CIFilter(name:"CILanczosScaleTransform")!
 
         // Desired output size
-        let targetSize = CGSize(width:360, height:640)
+        let targetSize = CGSize(width:640, height:360)
 
         // Compute scale and corrective aspect ratio
         let scale = targetSize.height / (sourceImage.extent.height)
@@ -542,11 +555,17 @@ extension BlendShapeViewController {
         resizeFilter.setValue(aspectRatio, forKey: kCIInputAspectRatioKey)
         guard let outputImage = resizeFilter.outputImage else { return print("\(#function) Error getting resampled image") }
         
-        guard let url = getSaveURLfor("pic-\(timeStamp).png") else { return print("\(#function) Error failed to save because of nil URL") }
+        //guard let url = getSaveURLfor("pic-\(timeStamp).png") else { return print("\(#function) Error failed to save because of nil URL")
+            guard let url = getSaveURLfor("pic-\(timeStamp).jpg") else { return print("\(#function) Error failed to save because of nil URL")
+        }
         
         guard let colorspace = sourceImage.colorSpace else { return print("\(#function) error getting colorspae") }
+        let imageProperties = [kCGImageDestinationLossyCompressionQuality as String: 0.8]
+       // [CIImageRepresentationOption : Any] = [:]
         do {
-            try context.writePNGRepresentation(of: outputImage, to: url, format: .RGBA8, colorSpace: colorspace)
+            //try context.writePNGRepresentation(of: outputImage, to: url, format: .RGBA8, colorSpace: colorspace)
+            try context.writeJPEGRepresentation(of: outputImage, to: url, colorSpace: colorspace, options:  [kCGImageDestinationLossyCompressionQuality as CIImageRepresentationOption : 0.8] )
+            
             print("\(#function) successfully wrote png to  url \(url)")
         } catch {
             
