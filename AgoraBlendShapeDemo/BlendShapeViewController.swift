@@ -20,7 +20,6 @@ class BlendShapeViewController: UIViewController {
     var rtmKit: AgoraRtmKit?
     var rtmChannel: AgoraRtmChannel?
     var currentImage: CGImage?
-    var rawImage: CIImage?
     var size: CGSize?
   
     let enableDetectBodyPoints = true
@@ -259,17 +258,11 @@ extension BlendShapeViewController: ARSCNViewDelegate {
     }
     
     func startImageProcessing() {
-        
         let snapShot = self.sceneView.snapshot()
         if let newImage = snapShot.cgImage {
             
             self.currentImage = newImage
             self.getPointsFromImage(newImage)
-        }
-        
-        if let rawSnapshot = sceneView.session.currentFrame {
-            let ciImage = CIImage(cvPixelBuffer: rawSnapshot.capturedImage)
-            self.rawImage = ciImage
         }
     }
     
@@ -506,15 +499,13 @@ extension BlendShapeViewController {
 // MARK: -
 // MARK: - Save files in specified format for CSV and images to Files domain
 extension BlendShapeViewController {
-    
-    
     private func cleanAndOrCreateTrainingDataDirectory() {
         guard let directoryUrl = getURLOfTrainingDataDirectory() else { return print("\(#function) failed to get base directory URL") }
         let fm = FileManager.default
         do {
             // If directory exists remove it
             var isDir:ObjCBool = true
-            if try fm.fileExists(atPath: directoryUrl.path, isDirectory: &isDir){
+            if fm.fileExists(atPath: directoryUrl.path, isDirectory: &isDir) {
                 try fm.removeItem(at: directoryUrl)
             }
             try fm.createDirectory(at: directoryUrl, withIntermediateDirectories: false)
@@ -524,12 +515,14 @@ extension BlendShapeViewController {
     }
     
     @objc private func saveFile() {
-        guard let rawImage = rawImage else { return print("\(#function) failed no current image") }
+        guard let rawImage = self.sceneView.session.currentFrame else { return print("\(#function) failed no current image") }
         guard blendshapesLocation.count > 10 else { return print("\(#function) failed blend shape lcations is too short")}
+        
+        
         
         let timestamp = Date().timeIntervalSince1970
         saveBlendDataToFile(timestamp)
-        saveCIImageToPNGFile(timestamp, rawImage)
+        saveJPEG(from: rawImage.capturedImage, at: timestamp)
         print("\(#function) save current image to file")
         
     }
@@ -543,41 +536,40 @@ extension BlendShapeViewController {
         }
     }
     
-    private func saveCIImageToPNGFile(_ timeStamp: TimeInterval, _ sourceImage: CIImage) {
-        let context = CIContext()
-        let resizeFilter = CIFilter(name:"CILanczosScaleTransform")!
-
-        // Desired output size
-        let targetSize = CGSize(width:640, height:360)
-
-        // Compute scale and corrective aspect ratio
-        let scale = targetSize.height / (sourceImage.extent.height)
-        let aspectRatio = targetSize.width/((sourceImage.extent.width) * scale)
-
-        // Apply resizing
-        resizeFilter.setValue(sourceImage, forKey: kCIInputImageKey)
-        resizeFilter.setValue(scale, forKey: kCIInputScaleKey)
-        resizeFilter.setValue(aspectRatio, forKey: kCIInputAspectRatioKey)
-        guard let outputImage = resizeFilter.outputImage else { return print("\(#function) Error getting resampled image") }
+    private func saveJPEG(from pixelBuffer: CVPixelBuffer, at timeStamp: TimeInterval) {
+        guard let url = getSaveURLfor("pic-\(timeStamp).jpg") else { return print("\(#function) Error failed to save because of nil URL") }
         
-        //guard let url = getSaveURLfor("pic-\(timeStamp).png") else { return print("\(#function) Error failed to save because of nil URL")
-            guard let url = getSaveURLfor("pic-\(timeStamp).jpg") else { return print("\(#function) Error failed to save because of nil URL")
+        let orientation: UIImage.Orientation
+        switch UIDevice.current.orientation {
+        case .landscapeRight:
+            orientation = .downMirrored
+        case .landscapeLeft:
+            orientation = .upMirrored
+        case .portrait:
+            orientation = .leftMirrored
+        case .portraitUpsideDown:
+            orientation = .rightMirrored
+        case .unknown:
+            orientation = .left
+        case .faceUp:
+            orientation = .up
+        case .faceDown:
+            orientation = .down
+        @unknown default:
+            orientation = .down
         }
         
-        guard let colorspace = sourceImage.colorSpace else { return print("\(#function) error getting colorspae") }
-        let imageProperties = [kCGImageDestinationLossyCompressionQuality as String: 0.8]
-       // [CIImageRepresentationOption : Any] = [:]
+        let uiimage = UIImage(ciImage: .init(cvPixelBuffer: pixelBuffer), scale: 1.0, orientation: orientation)
+        
+        guard let data = uiimage.jpegData(compressionQuality: 0.2) else { return print("\(#function)error getting jpeg data") }
+ 
         do {
-            //try context.writePNGRepresentation(of: outputImage, to: url, format: .RGBA8, colorSpace: colorspace)
-            try context.writeJPEGRepresentation(of: outputImage, to: url, colorSpace: colorspace, options:  [kCGImageDestinationLossyCompressionQuality as CIImageRepresentationOption : 0.8] )
-            
-            print("\(#function) successfully wrote png to  url \(url)")
+            try data.write(to: url)
         } catch {
-            
-            print("\(#function) Error Writing image, because \(error.localizedDescription)")
+            print("\(#function) ERROR writing jpeg \(error.localizedDescription)")
         }
     }
-    
+
     private func getURLOfTrainingDataDirectory() -> URL? {
         guard let baseUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             print("\(#function)Error getting user domain document directory, check plist")
