@@ -73,7 +73,7 @@ class BlendShapeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.clearDiskCache();
+        self.cleanAndOrCreateTrainingDataDirectory()
         self.size = self.sceneView.bounds.size
         self.startMessageTimer()
         self.startFileSaveTimer()
@@ -508,15 +508,20 @@ extension BlendShapeViewController {
 extension BlendShapeViewController {
     
     
-    private func clearDiskCache() {
-           let fileManager = FileManager.default
-           let myDocuments = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-           let diskCacheStorageBaseUrl = myDocuments.appendingPathComponent("")
-           guard let filePaths = try? fileManager.contentsOfDirectory(at: diskCacheStorageBaseUrl, includingPropertiesForKeys: nil, options: []) else { return }
-           for filePath in filePaths {
-               try? fileManager.removeItem(at: filePath)
-           }
-       }
+    private func cleanAndOrCreateTrainingDataDirectory() {
+        guard let directoryUrl = getURLOfTrainingDataDirectory() else { return print("\(#function) failed to get base directory URL") }
+        let fm = FileManager.default
+        do {
+            // If directory exists remove it
+            var isDir:ObjCBool = true
+            if try fm.fileExists(atPath: directoryUrl.path, isDirectory: &isDir){
+                try fm.removeItem(at: directoryUrl)
+            }
+            try fm.createDirectory(at: directoryUrl, withIntermediateDirectories: false)
+        } catch {
+            print("\(#function) ERROR \(error.localizedDescription)")
+        }
+    }
     
     @objc private func saveFile() {
         guard let rawImage = rawImage else { return print("\(#function) failed no current image") }
@@ -573,12 +578,17 @@ extension BlendShapeViewController {
         }
     }
     
-    private func getSaveURLfor(_ fileName: String) -> URL? {
+    private func getURLOfTrainingDataDirectory() -> URL? {
         guard let baseUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             print("\(#function)Error getting user domain document directory, check plist")
             return nil
         }
-        return baseUrl.appending(component: fileName)
+
+        return baseUrl.appendingPathComponent("mopac")
+    }
+    
+    private func getSaveURLfor(_ fileName: String) -> URL? {
+        return getURLOfTrainingDataDirectory()?.appending(component: fileName)
     }
 }
 
